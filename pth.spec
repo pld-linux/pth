@@ -2,7 +2,7 @@ Summary:	The GNU portable threads
 Name:		pth
 Version:	1.4.0
 Release:	1
-License:	GPL
+License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
@@ -12,7 +12,6 @@ Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
-Patch0:		%{name}-makefile.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
