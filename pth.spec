@@ -28,7 +28,7 @@ application, but each thread has its own individual program-counter,
 run-time stack, signal mask and errno variable.
 
 %description -l pl
-pth jest bardzo przeno¶n± biblioteki± bazuj±c± na POSIX/ANSI-C dla
+pth jest bardzo przeno¶n± bibliotek± bazuj±c± na POSIX/ANSI-C dla
 platform uniksowych, bazuj±ce na priorytetach dzielenie czasu bez
 wyw³aszczenia dla wielu w±tków (czyli wielow±tkowo¶æ) wewn±trz
 aplikacji sterowanych zdarzeniami. Wszystkie w±tki dzia³aj± w tej
