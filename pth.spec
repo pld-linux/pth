@@ -3,14 +3,22 @@ Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
 Version:	1.4.0
 Release:	1
+Epoch:		1
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
+Group(cs):	Knihovny
+Group(da):	Biblioteker
+Group(de):	Bibliotheken
 Group(es):	Bibliotecas
 Group(fr):	Librairies
+Group(it):	Librerie
+Group(ja):	¥é¥¤¥Ö¥é¥ê
+Group(no):	Biblioteker
 Group(pl):	Biblioteki
+Group(pt):	Bibliotecas
 Group(pt_BR):	Bibliotecas
 Group(ru):	âÉÂÌÉÏÔÅËÉ
+Group(sv):	Bibliotek
 Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,12 +43,19 @@ w³asny licznik instrukcji, stos, maski sygna³ów i zmienn± errno.
 Summary:	Header files and development documentation for pth
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do pth
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(cs):	Vıvojové prostøedky/Knihovny
+Group(da):	Udvikling/Biblioteker
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(it):	Sviluppo/Librerie
+Group(ja):	³«È¯/¥é¥¤¥Ö¥é¥ê
+Group(no):	Utvikling/Bibliotek
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(sv):	Utveckling/Bibliotek
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 
@@ -54,12 +69,19 @@ Pliki nag³ówkowe i dokumentacja programisty do pth.
 Summary:	Static version of the GNU portable threads library
 Summary(pl):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(cs):	Vıvojové prostøedky/Knihovny
+Group(da):	Udvikling/Biblioteker
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(it):	Sviluppo/Librerie
+Group(ja):	³«È¯/¥é¥¤¥Ö¥é¥ê
+Group(no):	Utvikling/Bibliotek
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(sv):	Utveckling/Bibliotek
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
