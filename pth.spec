@@ -7,6 +7,7 @@ Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
+# Source0-md5:	f84a87295fef3b41499f3b728b1f0050
 Patch0:		%{name}-m4_fix.patch
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
