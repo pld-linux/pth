@@ -6,15 +6,14 @@
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
-Version:	2.0.1
-Release:	2
+Version:	2.0.2
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
-# Source0-md5:	549b59457f7c3de7372df68b365589e6
-Patch0:		%{name}-m4_fix.patch
-Patch1:		%{name}-am18.patch
+# Source0-md5:	fc4d81a1dbf3d1af9a099b765f9a1be3
+Patch0:		%{name}-am18.patch
 URL:		http://www.gnu.org/software/pth/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -61,8 +60,7 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p1
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
