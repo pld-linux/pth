@@ -2,17 +2,12 @@
 # Conditional build:
 %bcond_without	tests	# don't perform "make test"
 %bcond_with	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
-%bcond_with	nptl	# disable pthread library in nptl enviroment
-#
-%if %{with nptl}
-%undefine	with_pthread
-%endif
 #
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
 Version:	2.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL
 Group:		Libraries
