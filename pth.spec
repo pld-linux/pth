@@ -1,13 +1,14 @@
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
-Version:	1.4.0
-Release:	2
+Version:	1.4.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
 Patch0:		%{name}-m4_fix.patch
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -55,6 +56,7 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 %patch0
 
 %build
+cp -f /usr/share/automake/config.* .
 %configure2_13
 %{__make}
 
@@ -75,7 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc ANNOUNCE AUTHORS ChangeLog HACKING HISTORY NEWS README SUPPORT TESTS THANKS USERS
+# COPYING contains not only LGPL text
+%doc ANNOUNCE AUTHORS COPYING ChangeLog HACKING HISTORY NEWS README SUPPORT TESTS THANKS USERS
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
