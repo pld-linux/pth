@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ANNOUNCE AUTHORS ChangeLog HACKING HISTORY NEWS README SUPPORT TESTS THANKS USERS
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_aclocaldir}/*
 %{_includedir}/*
 %{_mandir}/man3/*
