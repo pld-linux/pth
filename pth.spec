@@ -1,19 +1,26 @@
 #
 # Conditional build:
 %bcond_without	tests	# don't perform "make test"
+%bcond_without	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
+%bcond_with	nptl	# disable pthread library in nptl enviroment
+#
+%if %{with nptl}
+%undefine	with_pthread
+%endif
 #
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
-Version:	2.0.0
-Release:	2
+Version:	2.0.1
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
-# Source0-md5:	f84a87295fef3b41499f3b728b1f0050
+# Source0-md5:	549b59457f7c3de7372df68b365589e6
 Patch0:		%{name}-m4_fix.patch
 Patch1:		%{name}-am18.patch
+URL:		http://www.gnu.org/software/pth/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,7 +71,15 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 
 %build
 cp -f /usr/share/automake/config.* .
-%configure
+
+# -fno-strict-aliasing" because mainly pth_mctx.c contains important
+# and correct pointer casting constructs which are not acceptable
+# in "strict aliasing" for GCC.
+export CFLAGS="%{rpmcflags} -fno-strict-aliasing"
+%configure \
+	%{?with_pthread:--enable-pthread} \
+	--enable-optimize
+
 %{__make}
 %{?with_tests:%{__make} test}
 
@@ -81,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -90,8 +105,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_aclocaldir}/*
-%{_includedir}/*
+%{_aclocaldir}/pth.m4
+%{_includedir}/*.h
 %{_mandir}/man3/*
 %{_mandir}/man1/*
 
