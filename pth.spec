@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	tests	# don't perform "make test"
+#
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
@@ -62,6 +66,7 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
