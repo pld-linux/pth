@@ -32,7 +32,7 @@ w³asny licznik instrukcji, stos, maski sygna³ów i zmienn± errno.
 Summary:	Header files and development documentation for pth
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do pth
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description devel
 Header files and development documentation for pth.
@@ -44,7 +44,7 @@ Pliki nag³ówkowe i dokumentacja programisty do pth.
 Summary:	Static version of the GNU portable threads library
 Summary(pl):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 Static version of the GNU portable threads library.
