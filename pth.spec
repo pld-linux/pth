@@ -1,4 +1,5 @@
 Summary:	The GNU portable threads
+Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
 Version:	1.4.0
 Release:	1
@@ -22,6 +23,14 @@ applications. All threads run in the same address space of the server
 application, but each thread has its own individual program-counter,
 run-time stack, signal mask and errno variable.
 
+%description -l pl
+pth jest bardzo przeno¶n± biblioteki± bazuj±c± na POSIX/ANSI-C dla
+platform uniksowych, bazuj±ce na priorytetach dzielenie czasu bez
+wyw³aszczenia dla wielu w±tków (czyli wielow±tkowo¶æ) wewn±trz
+aplikacji sterowanych zdarzeniami. Wszystkie w±tki dzia³aj± w tej
+samej przestrzeni adresowej aplikacji serwera, ale ka¿dy ma swój
+w³asny licznik instrukcji, stos, maski sygna³ów i zmienn± errno.
+
 %package devel
 Summary:	Header files and development documentation for pth
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do pth
@@ -38,8 +47,12 @@ Requires:	%{name} = %{version}
 %description devel
 Header files and development documentation for pth.
 
+%description devel -l pl
+Pliki nag³ówkowe i dokumentacja programisty do pth.
+
 %package static
 Summary:	Static version of the GNU portable threads library
+Summary(pl):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -52,6 +65,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Static version of the GNU portable threads library.
+
+%description static -l pl
+Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 
 %prep
 %setup -q 
