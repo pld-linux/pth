@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests	# don't perform "make test"
-%bcond_without	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
+%bcond_with	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
 %bcond_with	nptl	# disable pthread library in nptl enviroment
 #
 %if %{with nptl}
@@ -44,7 +44,7 @@ w³asny licznik instrukcji, stos, maski sygna³ów i zmienn± errno.
 Summary:	Header files and development documentation for pth
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do pth
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files and development documentation for pth.
@@ -56,7 +56,7 @@ Pliki nag³ówkowe i dokumentacja programisty do pth.
 Summary:	Static version of the GNU portable threads library
 Summary(pl):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static version of the GNU portable threads library.
@@ -86,7 +86,8 @@ export CFLAGS="%{rpmcflags} -fno-strict-aliasing"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,12 +97,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+# COPYING contains not only LGPL text
+%doc ANNOUNCE AUTHORS COPYING ChangeLog HISTORY NEWS README SUPPORT TESTS THANKS USERS
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-# COPYING contains not only LGPL text
-%doc ANNOUNCE AUTHORS COPYING ChangeLog HACKING HISTORY NEWS README SUPPORT TESTS THANKS USERS
+%doc HACKING
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
