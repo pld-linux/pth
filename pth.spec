@@ -50,7 +50,7 @@ Static version of the GNU portable threads library.
 Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 %configure2_13
