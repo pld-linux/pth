@@ -6,20 +6,6 @@ Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Group(cs):	Knihovny
-Group(da):	Biblioteker
-Group(de):	Bibliotheken
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(it):	Librerie
-Group(ja):	╔И╔╓╔ж╔И╔Й
-Group(no):	Biblioteker
-Group(pl):	Biblioteki
-Group(pt):	Bibliotecas
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(sv):	Bibliotek
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,20 +29,6 @@ wЁasny licznik instrukcji, stos, maski sygnaЁСw i zmienn╠ errno.
 Summary:	Header files and development documentation for pth
 Summary(pl):	Pliki nagЁСwkowe i dokumentacja do pth
 Group:		Development/Libraries
-Group(cs):	VЩvojovИ prostЬedky/Knihovny
-Group(da):	Udvikling/Biblioteker
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(it):	Sviluppo/Librerie
-Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
-Group(no):	Utvikling/Bibliotek
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(sv):	Utveckling/Bibliotek
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -69,20 +41,6 @@ Pliki nagЁСwkowe i dokumentacja programisty do pth.
 Summary:	Static version of the GNU portable threads library
 Summary(pl):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
-Group(cs):	VЩvojovИ prostЬedky/Knihovny
-Group(da):	Udvikling/Biblioteker
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(it):	Sviluppo/Librerie
-Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
-Group(no):	Utvikling/Bibliotek
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(sv):	Utveckling/Bibliotek
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
