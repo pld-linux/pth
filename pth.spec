@@ -6,16 +6,21 @@
 Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
-Version:	2.0.6
+Version:	2.0.7
 Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
-# Source0-md5:	bdee96babed9b177484ed2dbfd5b127b
+# Source0-md5:	9cb4a25331a4c4db866a31cbe507c793
 URL:		http://www.gnu.org/software/pth/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# -fno-strict-aliasing" because mainly pth_mctx.c contains important
+# and correct pointer casting constructs which are not acceptable
+# in "strict aliasing" for GCC.
+%define		specflags	-fno-strict-aliasing
 
 %description
 Pth is a very portable POSIX/ANSI-C based library for Unix platforms
@@ -63,10 +68,6 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 %build
 cp -f /usr/share/automake/config.* .
 
-# -fno-strict-aliasing" because mainly pth_mctx.c contains important
-# and correct pointer casting constructs which are not acceptable
-# in "strict aliasing" for GCC.
-export CFLAGS="%{rpmcflags} -fno-strict-aliasing"
 %configure \
 	%{?with_pthread:--enable-pthread} \
 	--enable-optimize
