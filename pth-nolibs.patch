@@ -1,0 +1,33 @@
+--- pth-2.0.7/configure.ac.orig	2006-06-08 19:54:01.000000000 +0200
++++ pth-2.0.7/configure.ac	2006-10-11 12:18:43.215971000 +0200
+@@ -194,11 +194,8 @@
+ AC_HAVE_HEADERS(sys/resource.h net/errno.h paths.h)
+ 
+ dnl # at least the test programs need some socket stuff
+-AC_CHECK_LIB(nsl, gethostname)
+-if test ".`echo $LIBS | grep nsl`" = .; then
+-    AC_CHECK_LIB(nsl, gethostbyname)
+-fi
+-AC_CHECK_LIB(socket, accept)
++AC_SEARCH_LIBS(gethostbyname, nsl)
++AC_SEARCH_LIBS(accept, socket)
+ 
+ dnl # check whether we've to use a non-standard #include <sys/select.h>  to get
+ dnl # the definition for fd_set under AIX and other brain-dead platforms.
+@@ -481,7 +478,7 @@
+ 
+ dnl #   check for dlsym(3) with RTLD_NEXT
+ AC_CHECK_HEADERS(dlfcn.h)
+-AC_CHECK_LIB(dl, dlsym)
++AC_CHECK_LIB(dl, dlsym, [LIBDL="-ldl"])
+ AC_CHECK_FUNCS(dlopen dlsym dlclose)
+ AC_CHECK_DEFINE(RTLD_NEXT, dlfcn.h)
+ 
+@@ -547,6 +544,7 @@
+ if test ".$enable_syscall_hard" = .yes; then
+     PTH_SYSCALL_HARD=1
+     msg="yes"
++    LIBS="$LIBS $LIBDL"
+ else
+     PTH_SYSCALL_HARD=0
+     msg="no"
