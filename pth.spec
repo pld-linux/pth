@@ -70,9 +70,9 @@ Statyczna wersja biblioteki przeno¶nych w±tków GNU.
 %patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.* .
+# no aclocal call: aclocal.m4 contains only local macros, libtool.m4 is included from configure.in
+cp -f /usr/share/automake/config.* /usr/share/aclocal/libtool.m4 .
 %{__libtoolize}
-%{__aclocal}
 %{__autoheader}
 %{__autoconf}
 %configure \
