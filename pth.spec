@@ -7,7 +7,7 @@ Summary:	The GNU portable threads
 Summary(pl):	Przeno¶ne w±tki GNU
 Name:		pth
 Version:	2.0.7
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		Libraries
