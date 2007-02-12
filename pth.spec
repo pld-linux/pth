@@ -4,7 +4,7 @@
 %bcond_with	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
 #
 Summary:	The GNU portable threads
-Summary(pl):	Przeno¶ne w±tki GNU
+Summary(pl.UTF-8):   PrzenoÅ›ne wÄ…tki GNU
 Name:		pth
 Version:	2.0.7
 Release:	3
@@ -33,37 +33,37 @@ applications. All threads run in the same address space of the server
 application, but each thread has its own individual program-counter,
 run-time stack, signal mask and errno variable.
 
-%description -l pl
-pth jest bardzo przeno¶n± bibliotek± bazuj±c± na POSIX/ANSI-C dla
-platform uniksowych, bazuj±ce na priorytetach dzielenie czasu bez
-wyw³aszczenia dla wielu w±tków (czyli wielow±tkowo¶æ) wewn±trz
-aplikacji sterowanych zdarzeniami. Wszystkie w±tki dzia³aj± w tej
-samej przestrzeni adresowej aplikacji serwera, ale ka¿dy ma swój
-w³asny licznik instrukcji, stos, maski sygna³ów i zmienn± errno.
+%description -l pl.UTF-8
+pth jest bardzo przenoÅ›nÄ… bibliotekÄ… bazujÄ…cÄ… na POSIX/ANSI-C dla
+platform uniksowych, bazujÄ…ce na priorytetach dzielenie czasu bez
+wywÅ‚aszczenia dla wielu wÄ…tkÃ³w (czyli wielowÄ…tkowoÅ›Ä‡) wewnÄ…trz
+aplikacji sterowanych zdarzeniami. Wszystkie wÄ…tki dziaÅ‚ajÄ… w tej
+samej przestrzeni adresowej aplikacji serwera, ale kaÅ¼dy ma swÃ³j
+wÅ‚asny licznik instrukcji, stos, maski sygnaÅ‚Ã³w i zmiennÄ… errno.
 
 %package devel
 Summary:	Header files and development documentation for pth
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do pth
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja do pth
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files and development documentation for pth.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja programisty do pth.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja programisty do pth.
 
 %package static
 Summary:	Static version of the GNU portable threads library
-Summary(pl):	Statyczna wersja biblioteki pth
+Summary(pl.UTF-8):   Statyczna wersja biblioteki pth
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static version of the GNU portable threads library.
 
-%description static -l pl
-Statyczna wersja biblioteki przeno¶nych w±tków GNU.
+%description static -l pl.UTF-8
+Statyczna wersja biblioteki przenoÅ›nych wÄ…tkÃ³w GNU.
 
 %prep
 %setup -q
