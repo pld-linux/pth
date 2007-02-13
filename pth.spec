@@ -4,7 +4,7 @@
 %bcond_with	pthread	# build pthread library (POSIX.1c threading API of GNU Pth)
 #
 Summary:	The GNU portable threads
-Summary(pl.UTF-8):   Przenośne wątki GNU
+Summary(pl.UTF-8):	Przenośne wątki GNU
 Name:		pth
 Version:	2.0.7
 Release:	3
@@ -43,7 +43,7 @@ własny licznik instrukcji, stos, maski sygnałów i zmienną errno.
 
 %package devel
 Summary:	Header files and development documentation for pth
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do pth
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do pth
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -55,7 +55,7 @@ Pliki nagłówkowe i dokumentacja programisty do pth.
 
 %package static
 Summary:	Static version of the GNU portable threads library
-Summary(pl.UTF-8):   Statyczna wersja biblioteki pth
+Summary(pl.UTF-8):	Statyczna wersja biblioteki pth
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
