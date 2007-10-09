@@ -1,0 +1,10 @@
+- updated to 2.0.1
+  # fix handling/casting of "int (*)(void *)" callback functions.
+  # use gcc 3.3 option "-fno-strict-aliasing" (if available) under
+    autoconf option "--enable-debug" because mainly pth_mctx.c
+    contains important and correct pointer casting constructs which
+    are not acceptable in "strict aliasing" for gcc.
+- pthread library enabled in linuxthreads environment.
+- optimizations enabled.
+- url added.
+- release 1.
