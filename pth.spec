@@ -11,7 +11,7 @@ Release:	3
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/pth/%{name}-%{version}.tar.gz
 # Source0-md5:	9cb4a25331a4c4db866a31cbe507c793
 Patch0:		%{name}-nolibs.patch
 URL:		http://www.gnu.org/software/pth/
