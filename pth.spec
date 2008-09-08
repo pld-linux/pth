@@ -7,7 +7,7 @@ Summary:	The GNU portable threads
 Summary(pl.UTF-8):	Przenośne wątki GNU
 Name:		pth
 Version:	2.0.7
-Release:	4
+Release:	5
 Epoch:		1
 License:	LGPL
 Group:		Libraries
@@ -68,18 +68,19 @@ Statyczna wersja biblioteki przenośnych wątków GNU.
 %prep
 %setup -q
 %patch0 -p1
-
-%build
 # no aclocal call: aclocal.m4 contains only local macros, libtool.m4 is included from configure.in
 cp -f /usr/share/automake/config.* /usr/share/aclocal/libtool.m4 .
+mv aclocal.m4 local.m4
+
+%build
 %{__libtoolize}
+%{__aclocal} -I.
 %{__autoheader}
 %{__autoconf}
 %configure \
 	%{?with_pthread:--enable-pthread} \
 	--enable-optimize
 
-%{__make} pth_p.h
 %{__make}
 %{?with_tests:%{__make} test}
 
@@ -99,13 +100,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 # COPYING contains not only LGPL text
 %doc ANNOUNCE AUTHORS COPYING ChangeLog HISTORY NEWS README SUPPORT TESTS THANKS USERS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libpth.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libpth.so.20
 
 %files devel
 %defattr(644,root,root,755)
 %doc HACKING
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libpth.so
 %{_libdir}/lib*.la
 %{_aclocaldir}/pth.m4
 %{_includedir}/*.h
