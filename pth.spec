@@ -81,6 +81,7 @@ mv aclocal.m4 local.m4
 	%{?with_pthread:--enable-pthread} \
 	--enable-optimize
 
+%{__make} pth_p.h
 %{__make}
 %{?with_tests:%{__make} test}
 
