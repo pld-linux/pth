@@ -67,7 +67,7 @@ Statyczna wersja biblioteki przenośnych wątków GNU.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 # no aclocal call: aclocal.m4 contains only local macros, libtool.m4 is included from configure.in
 cp -f /usr/share/automake/config.* /usr/share/aclocal/libtool.m4 .
 mv aclocal.m4 local.m4
